@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="row text-center mt-4">
+    <div class="col">
+      <img src="https://i.pinimg.com/originals/9e/85/c2/9e85c220692b3aa653b5e8daec2cd69e.png" alt=""
+        class="img-fluid" width="200px">
+    </div>
+  </div>
+  <div class="row text-center mt-5">
+    <div class="col">
+      <h2>Ingrese Datos del Pasajero</h2>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-2">
+      <label for="txtId" class="from-label">ID</label>
+      <input type="text" name="id" id="txtId" class="form-control" [(ngModel)]= "agencia.id" disabled="true">
+    </div>
+    <div class="col-md-4">
+      <label for="txtNombre" class="from-label">Nombre</label>
+      <input type="text" name="id" id="txtNombre" class="form-control" [(ngModel)]= "agencia.nombre">
+    </div>
+    <div class="col-md-2">
+      <label for="txtApellido" class="from-label">Apellido</label>
+      <input type="text" name="id" id="txtapellido" class="form-control" [(ngModel)]= "agencia.apellido">
+    </div>
+    <div class="col-md-4">
+      <label for="txtCedula" class="from-label">Cédula</label>
+      <input type="text" name="id" id="txtCedula" class="form-control" [(ngModel)]= "agencia.cedula">
+    </div>
+    <div class="col-md-4">
+      <label for="txtEmail" class="from-label">Email</label>
+      <input type="text" name="id" id="txtEmail" class="form-control" [(ngModel)]= "agencia.email">
+    </div>
+    <div class="col-md-4">
+      <label for="txtCelular" class="from-label">Celular</label>
+      <input type="text" name="id" id="txtCelular" class="form-control" [(ngModel)]= "agencia.celular">
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col">
+      <button class="btn btn-success" type="button" (click)="onAddCliente(agencia)">Agregar</button>
+      <button class="btn btn-warning m-2" type="button" (click)="onUpdateCliente(agencia)">Modificar</button>
+      <button class="btn btn-danger" type="button" (click)="onDeleteCliente(agencia.id, agencia)">Eliminar</button>
+      <button class="btn btn-primary m-2" type="button" (click)="clear()">Limpiar</button>
+    </div>
+    
+  </div>
+  <div class="row mt-5">
+    <div class="col">
+      <table id="dtMascota" class="table table-striped" style="width: 100%;">
+        <thead>
+          <tr>
+            <th>Seleccionar</th>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Cédula</th>
+            <th>Email</th>
+            <th>Celular</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of datatable">
+            <td><input type="button" value="Seleccionar" (click)="onSetData(item)"></td>
+            <td> {{ item.idCliente }} </td>
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.apellido }}</td>
+            <td>{{ item.cedula }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.celular }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
