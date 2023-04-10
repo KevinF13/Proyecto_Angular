@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Formulario de Registro</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
+      
+      h1 {
+        text-align: center;
+        color: #4CAF50;
+      }
+      
+      form {
+        background-color: #ffffff;
+        border-radius: 10px;
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+      }
+      
+      label {
+        display: block;
+        margin-top: 10px;
+        color: #555;
+        font-weight: bold;
+      }
+      
+      input[type=text], input[type=email], input[type=tel], input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      
+      input[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      
+      input[type=submit]:hover {
+        background-color: #45a049;
+      }
+      
+      .error {
+        color: red;
+        font-weight: bold;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Registro de Usuario</h1>
+    <form>
+      <label for="txtId" class="from-label">ID</label>
+      <input type="text" name="id" id="txtId" class="form-control" [(ngModel)]= "registro.id" disabled="true">
+    
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required [(ngModel)]= "registro.nombre">
+
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellido" name="apellido" required [(ngModel)]= "registro.apellido">
+
+      <label for="celular">Celular:</label>
+      <input type="tel" id="celular" name="celular" required [(ngModel)]= "registro.celular">
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required [(ngModel)]= "registro.email">
+
+      <label for="contraseña">Contraseña:</label>
+      <input type="password" id="contraseña" name="contraseña" required [(ngModel)]= "registro.contrasena">
+
+      <label for="repetir_contraseña">Repetir Contraseña:</label>
+      <input type="password" id="repetir_contraseña" name="repetir_contraseña" required [(ngModel)]= "registro.rcontrasena">
+
+      <input type="button" value="Registrarse"  (click)="onAddUsuario(registro)">
+    </form>
+  </body>
+</html>
+<!-- 
+<div class="container border-5 position-relative">
+    <form class="border p-3">
+      <div class="row g-0">
+          <div class="col text-center p-2 mb-3 bg-light">
+              <span class="fs-3">Registro</span>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col mb-3">
+              <label for="firstname" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="firstname">
+          </div>
+          <div class="col mb-3" >
+              <label for="lastname" class="form-label">Apellido</label>
+              <input type="text" class="form-control" id="lastname">
+          </div>
+          <div class="col mb-3" >
+              <label for="phone" class="form-label">Número de Celular</label>
+              <input type="text" class="form-control" id="phone">
+          </div>
+          <div class="row">
+              <div class="col mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" formControlName="email">
+                  <div class="form-text"></div>
+              </div>
+          </div>
+          <div class="col mb-3" >
+              <label for="password" class="form-label">Contraseña</label>
+              <input type="text" class="form-control" id="password">
+          </div>
+          <div class="col mb-3" >
+              <label for="password2" class="form-label">Repita la Contraseña</label>
+              <input type="text" class="form-control" id="password2">
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-6 offset-3">
+              <div class="d-grid">
+                <td>
+                  <button type="submit" class="btn btn-primary">Registrar</button>
+                </td>
+              </div>
+          </div>
+      </div>
+    </form>
+  </div> -->
